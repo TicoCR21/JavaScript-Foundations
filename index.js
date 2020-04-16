@@ -95,8 +95,6 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
-mortgageCalculator2( 200000, 0.02, 30 );
-
 function variableInterestRate( principal, interest_rate, years )
 {
     interest_rate -= 0.02;
@@ -111,12 +109,29 @@ variableInterestRate( 200000, 0.04, 30 );
 /* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may require additional research beyond what you learned today */
 
 /*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
+function mortgageCalculator4( principal, interest_rate, years, property_tax, home_insurance, hoa )
+{
+    console.log( `${ name }, your monthly rate with PropertyTax, Home Insurance and HOA is ${ ( monthlyRate( principal, interest_rate, years ) + property_tax + home_insurance + hoa ).toFixed( 2 ) }` );
+}
 
+mortgageCalculator4( principal, interest_rate, years, 400, 40, 300 );
 
 /* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford */
+function maxLoanAmount( monthly_payment, interest_rate )
+{
+    console.log( `Max Loan( 30 years ): ${ Math.round( monthly_payment / ( ( interest_rate / 12 ) * ( Math.pow( 1 + ( interest_rate / 12 ), years * 12 ) ) / ( Math.pow( 1 + ( interest_rate / 12 ), years * 12 ) - 1 ) ) ) }` );
+}
 
+maxLoanAmount( 3500, 0.05 );
 
 /* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
 
 
 /* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
+function variableInterestRate2( principal, interest_rates )
+{
+    for( i in interest_rates )    
+        console.log( `${ name }, with an interest rate of ${ interest_rates[ i ] }, your monthly rate is ${ Math.round( monthlyRate( principal, interest_rates[ i ], years ) ) }` );
+}
+
+variableInterestRate2( 200000, [ 0.03, 0.04, 0.05, 0.06 ] );
