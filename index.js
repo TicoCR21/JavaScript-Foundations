@@ -125,6 +125,10 @@ function maxLoanAmount( monthly_payment, interest_rate )
 maxLoanAmount( 3500, 0.05 );
 
 /* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
+let a = prompt( "Enter Principal: " );
+let b = prompt( "Enter Interest Rate: " );
+let c = prompt( "Enter Loan Term in Years: " );
+mortgageCalculator2( a, b, c );
 
 
 /* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
